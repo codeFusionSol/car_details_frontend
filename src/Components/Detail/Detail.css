@@ -1,0 +1,17 @@
+.accordion-button::after {
+  display: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #fff;
+}
+
+.accordion-button {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.accordion-item {
+  border: none;
+  border-bottom: 1px solid gray !important;
+}
