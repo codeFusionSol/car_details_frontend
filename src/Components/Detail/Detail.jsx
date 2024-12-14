@@ -1,3 +1,4 @@
+import PartStateBox from "../PartStateBox/PartStateBox";
 import "./Detail.css";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 const Detail = () => {
@@ -34,7 +35,7 @@ const Detail = () => {
         <div className="p-4">
           <div className="accordion" id="inspectionAccordion">
             {sections.map((section, index) => (
-              <div className="accordion-item " key={index}>
+              <div className="accordion-item "  key={index}>
                 <button
                   className="accordion-button collapsed"
                   type="button"
@@ -45,7 +46,11 @@ const Detail = () => {
                 >
                   {section}
                   <span className="ms-auto ">
-                    <AddCircleRoundedIcon />
+                    <img
+                      src="/assets/icons/plusIcon.png"
+                      width="30px"
+                      alt="plusIcon"
+                    />
                   </span>
                 </button>
                 <div
@@ -54,8 +59,15 @@ const Detail = () => {
                   aria-labelledby={`heading${index}`}
                   data-bs-parent="#inspectionAccordion"
                 >
-                  <div className="accordion-body">
-                    Add content for the "{section}" section here.
+                  <div className="accordion-body d-flex flex-wrap gap-2">
+                    <PartStateBox />
+                    <PartStateBox />
+                    <PartStateBox />
+                    <PartStateBox />
+                    <PartStateBox />
+                    <PartStateBox />
+                    <PartStateBox />
+                    <PartStateBox />
                   </div>
                 </div>
               </div>

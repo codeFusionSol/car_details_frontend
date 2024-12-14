@@ -22,7 +22,7 @@
 }
 
 .car-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -36,7 +36,7 @@
 .carDetailsTable > tr > td {
   padding: 20px 130px 20px 10px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .carDetailsTable > tr > td span {
@@ -55,7 +55,6 @@
 
 @media (min-width: 767px) and (max-width: 768px) {
   .car-card {
-    flex-direction: column;
     width: 100% !important;
   }
 
@@ -113,6 +112,7 @@
     display: none;
   }
   .carDetailsMobile {
+    margin-top: 55px;
     display: block;
     padding: 15px;
     background-color: #fff;
@@ -137,4 +137,12 @@
   .carDetailsMobile p:last-child {
     border-bottom: none;
   }
+}
+
+
+@media  (max-width: 400px) {
+  .carDetailsMobile {
+    margin-top: 15px;
+  }
+  
 }

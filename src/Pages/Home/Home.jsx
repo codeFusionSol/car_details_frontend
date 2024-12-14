@@ -16,13 +16,11 @@ const Home = () => {
             <CarDetails />
           </div>
 
-
-
-          <div className="col-12 mt-5 d-flex justify-content-center">
+          <div className="col-12 d-flex justify-content-center VehicleInspectionReportContainer">
             <VehicleInspectionReport />
           </div>
 
-          <div className="col-12 mt-5 d-flex justify-content-center">
+          <div className="col-12 d-flex justify-content-center ">
             <Detail />
           </div>
 

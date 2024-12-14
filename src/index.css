@@ -32,3 +32,40 @@ form {
 body {
   background-color: rgb(244, 244, 244);
 }
+
+:root {
+  --primary-color: #ffc847;
+  --black-color: #191919;
+  --white-color: #fff;
+  --green-color: #deffcf;
+  --red-color: #ffa5a5;
+}
+
+.VehicleInspectionReportContainer {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+}
+
+@media (max-width: 768px) {
+  .VehicleInspectionReportContainer {
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
+  }
+}
+
+  .accordion-body {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .accordion-button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  .accordion-item:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
