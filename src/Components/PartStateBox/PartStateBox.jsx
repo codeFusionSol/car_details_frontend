@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-const PartStateBox = () => {
+const PartStateBox = ({ data, index }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div
       style={{
@@ -24,43 +34,52 @@ const PartStateBox = () => {
           color: "#333",
         }}
       >
-        Radiator Core Support
+        {data?.name}
       </div>
 
       {/* Button Section */}
-      <div
-        style={{
-          backgroundColor: "#f9f9f9", 
-          fontSize: "14px",
-          fontWeight: "bold",
-          paddingBottom: "15px",
-          color: "#333",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <button
-          style={{
-            backgroundColor: "var(--primary-color)",
-            color: "var(--black-color)", 
-            border: "none",
-            borderRadius: "20px",
-            padding: "8px 16px",
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-            fontSize: "14px",
-            fontWeight: "500",
-            width: "auto",
-            minWidth: "120px",
-          }}
-        >
-          <img src="/assets/icons/viewIcon.png" width="16px" alt="viewIcon" />
-          View Image
-        </button>
-      </div>
+      {data?.data?.image?.url && (
+        <>
+          <div
+            style={{
+              backgroundColor: "#f9f9f9",
+              fontSize: "14px",
+              fontWeight: "bold",
+              paddingBottom: "15px",
+              color: "#333",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <button
+              onClick={openModal}
+              style={{
+                backgroundColor: "var(--primary-color)",
+                color: "var(--black-color)",
+                border: "none",
+                borderRadius: "20px",
+                padding: "8px 16px",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                fontSize: "14px",
+                fontWeight: "500",
+                width: "auto",
+                minWidth: "120px",
+              }}
+            >
+              <img
+                src="/assets/icons/viewIcon.png"
+                width="16px"
+                alt="viewIcon"
+              />
+              View Image
+            </button>
+          </div>
+        </>
+      )}
 
       {/* Status Section */}
       <div
@@ -75,8 +94,72 @@ const PartStateBox = () => {
           alignItems: "center",
         }}
       >
-        Non-Accidented
+        {index === 0
+          ? data?.data?.value === true
+            ? "Accidented"
+            : "Non-Accidented"
+          : index === 1 ||
+            index === 2 ||
+            index === 3 ||
+            index === 4 ||
+            index === 5 ||
+            index === 6 ||
+            index === 7 ||
+            index === 8
+          ? data?.data?.value
+          : null}
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div
+          style={{
+            display: "flex",
+            position: "fixed",
+            zIndex: 1,
+            left: 0,
+            top: 0,
+            bottom: 0,
+            right: 0,
+            width: "100%",
+            height: "100%",
+            overflow: "auto",
+            backgroundColor: "rgba(0, 0, 0, 0.9)",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          <span
+            style={{
+              position: "fixed", 
+              top: "15px",
+              right: "35px",
+              color: "#f1f1f1",
+              fontSize: "40px",
+              fontWeight: "bold",
+              cursor: "pointer",
+            }}
+            onClick={closeModal}
+          >
+            &times;
+          </span>
+
+          <img
+            src={data?.data?.image?.url}
+            alt={data?.name}
+            style={{
+              maxWidth: "95%",
+              maxHeight: "95vh",
+              width: "100%",
+              objectFit: "contain",
+              WebkitAnimationName: "zoom",
+              WebkitAnimationDuration: "0.6s", 
+              animationName: "zoom",
+              animationDuration: "0.6s",
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 };
