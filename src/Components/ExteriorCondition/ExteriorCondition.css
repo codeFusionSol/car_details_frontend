@@ -20,7 +20,7 @@
 }
 
 .leftView {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -146,14 +146,14 @@
 @media (max-width: 1025px) {
   .leftView {
     height: 200px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   .topView {
     height: 250px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   .rightView {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 200px;
   }
 
@@ -194,14 +194,14 @@
   }
   .leftView {
     height: 160px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   .topView {
     height: 190px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   .rightView {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 160px;
   }
 
