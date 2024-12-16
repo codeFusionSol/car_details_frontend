@@ -12,6 +12,7 @@ function App() {
   const [id, setId] = useState(null);
   const [data, setData] = useState(null);
   const [AllFormsData, setAllFormsData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const id = window.location.pathname.split("/").pop();
@@ -23,6 +24,7 @@ function App() {
         console.log(response.data);
         setData(response.data.data);
         setAllFormsData(response.data.AllFormsData);
+        setLoading(false);
       }
     };
     fetchData();
@@ -30,11 +32,22 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/:id" element={<Home data={data} AllFormsData={AllFormsData} />} />
-        </Routes>
-      </BrowserRouter>
+      {loading ? (
+        <div className="d-flex justify-content-center align-items-center vh-100">
+         <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+       </div>
+      ) : (
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/:id"
+              element={<Home data={data} AllFormsData={AllFormsData} />}
+            />
+          </Routes>
+        </BrowserRouter>
+      )}
     </>
   );
 }
