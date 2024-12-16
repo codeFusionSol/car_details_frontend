@@ -44,7 +44,6 @@ body {
 .VehicleInspectionReportContainer {
   margin-top: 3rem;
   margin-bottom: 3rem;
-
 }
 
 @media (max-width: 768px) {
@@ -54,18 +53,26 @@ body {
   }
 }
 
-  .accordion-body {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
+.accordion-body {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 
-  .accordion-button:focus {
-    outline: none !important;
-    box-shadow: none !important;
-    border: none !important;
-  }
-  .accordion-item:focus {
-    outline: none !important;
-    box-shadow: none !important;
-    border: none !important;
-  }
+.accordion-button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.accordion-item:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.point {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

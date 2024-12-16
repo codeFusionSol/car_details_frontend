@@ -55,6 +55,9 @@
 }
 
 @media (min-width: 767px) and (max-width: 768px) {
+  .car-title {
+  text-align: center;
+  }
   .car-card {
     width: 100% !important;
   }
@@ -73,11 +76,14 @@
   }
 
   .carDetailsTable > tr > td {
-    padding: 25px 40px;
+    padding: 25px 30px;
   }
 }
 
 @media (max-width: 767px) {
+  .car-title {
+    text-align: center;
+    }
   .car-card {
     flex-direction: column;
     width: 100% !important;
@@ -109,6 +115,9 @@
 }
 
 @media (max-width: 576px) {
+  .car-title {
+    text-align: center;
+    }
   .carDetailsTable {
     display: none;
   }
@@ -141,6 +150,9 @@
 }
 
 @media (max-width: 400px) {
+  .car-title {
+    text-align: center;
+    }
   .carDetailsMobile {
     margin-top: 15px;
   }

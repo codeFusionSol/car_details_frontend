@@ -1,16 +1,10 @@
 .carMainContainer {
   position: relative;
   width: 100%;
-  height: 700px;
 }
 
 .carContainer {
-  background-image: url("https://wsa2.pakwheels.com/assets/car_certification_v2-7bc4d9c110b5423afde84bc73fb1f8d2.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 70%;
-  height: 100%;
+  position: relative;
 }
 .carDivsContainer {
   position: absolute;
@@ -20,37 +14,313 @@
   height: 100%;
 }
 
+.carImg {
+  width: 100%;
+  position: relative;
+}
+
 .leftView {
-  border: 1px solid red;
-  width: 70%;
+  /* border: 1px solid red; */
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 215px;
+  height: 290px;
 }
 
 .rearLeftFender {
-  border: 1px solid red;
-  width: 140px;
+  /* border: 1px solid red; */
+  width: 15%;
   height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .FrontLeftDoor2 {
-  border: 1px solid red;
-  width: 150px;
+  /* border: 1px solid red; */
+  width: 12%;
   height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
 }
 
 .FrontLeftDoor1 {
-  border: 1px solid red;
-  width: 150px;
+  /* border: 1px solid red; */
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
   height: 100px;
 }
 
 .FrontLeftFender {
-  border: 1px solid red;
-  width: 200px;
+  /* border: 1px solid red; */
+  width: 15%;
   height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.topView {
+  /* border: 1px solid red; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 350px;
+}
+
+.rightView {
+  /* border: 1px solid red; */
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 290px;
+}
+
+.rearBumper {
+  /* border: 1px solid red; */
+  width: 8%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 290px;
+}
+
+.trunk {
+  /* border: 1px solid red; */
+  width: 5%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 290px;
+}
+
+.roof {
+  /* border: 1px solid red; */
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  height: 290px;
+}
+
+.boonet {
+  /* border: 1px solid red; */
+  width: 7%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 290px;
+}
+
+.frontBumper {
+  /* border: 1px solid red; */
+  width: 7%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 290px;
+}
+
+.pointDiv {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  padding: 5px 8px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1025px) {
+  .leftView {
+    height: 200px;
+    border: 1px solid red;
+  }
+  .topView {
+    height: 250px;
+    border: 1px solid red;
+  }
+  .rightView {
+    border: 1px solid red;
+    height: 200px;
+  }
+
+  .rearLeftFender,
+  .FrontLeftDoor1,
+  .FrontLeftDoor2,
+  .FrontLeftFender {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .trunk,
+  .rearBumper,
+  .roof,
+  .boonet,
+  .frontBumper {
+    flex-direction: column;
+  }
+
+  .rearLeftFender,
+  .FrontLeftDoor1,
+  .FrontLeftDoor2 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .FrontLeftFender {
+    flex-direction: row;
+    align-items: end;
+  }
+}
+
+@media (max-width: 768px) {
+  .pointDiv {
+    width: 23px;
+    height: 23px;
+  }
+  .leftView {
+    height: 160px;
+    border: 1px solid red;
+  }
+  .topView {
+    height: 190px;
+    border: 1px solid red;
+  }
+  .rightView {
+    border: 1px solid red;
+    height: 160px;
+  }
+
+  .rearLeftFender,
+  .FrontLeftDoor1,
+  .FrontLeftDoor2,
+  .FrontLeftFender {
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .pointDiv {
+    width: 15px;
+    font-size: 10px;
+    height: 15px;
+  }
+
+  .leftView {
+    height: 100px;
+  }
+  .topView {
+    height: 100px;
+  }
+  .rightView {
+    height: 100px;
+  }
+
+  .rearLeftFender,
+  .FrontLeftDoor1,
+  .FrontLeftDoor2 {
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .trunk,
+  .rearBumper,
+  .roof,
+  .boonet,
+  .frontBumper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
 }
 
 
+
+@media (max-width: 400px) {
+  .pointDiv {
+    width: 10px;
+    font-size: 8px;
+    padding: 7px;
+    height: 10px;
+  }
+
+  .leftView {
+    height: 80px;
+  }
+  .topView {
+    height: 95px;
+  }
+  .rightView {
+    height: 80px;
+  }
+
+  .rearLeftFender,
+  .FrontLeftDoor1,
+  .FrontLeftDoor2 {
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .trunk,
+  .rearBumper,
+  .roof,
+  .boonet,
+  .frontBumper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 330px) {
+  .leftView {
+    height: 65px;
+  }
+  .topView {
+    height: 85px;
+  }
+  .rightView {
+    height: 65px;
+  }
+
+  .rearLeftFender,
+  .FrontLeftDoor1,
+  .FrontLeftDoor2 {
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .trunk,
+  .rearBumper,
+  .roof,
+  .boonet,
+  .frontBumper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+}
