@@ -31,96 +31,198 @@ const Home = ({ data, AllFormsData }) => {
             className="col-12 d-flex justify-content-between "
             style={{ marginBottom: "50px" }}
           >
-            <div className="points d-flex flex-wrap flex-start gap-5 mt-5">
+            <div className="points d-flex flex-column flex-wrap justify-content-center gap-4 mt-5">
               <div className="point">
                 <div
                   style={{
                     backgroundColor: "var(--primary-color)",
-                    color: "white",
-                    padding: "5px 10px",
-                    borderRadius: "5px",
-                    fontSize: "12px",
-                    fontWeight: "bold",
+                    color: "var(--black-color)",
+                    padding: "8px 15px",
+                    borderRadius: "50%",
+                    fontSize: "14px",
+                    fontWeight: "700",
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                    width: "40px",
+                    height: "40px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "8px",
                   }}
                 >
                   A1
                 </div>
-                <p>Small Scratch</p>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: "500",
+                    color: "var(--black-color)",
+                    textAlign: "left", // Change from center to left
+                    maxWidth: "100%",
+                  }}
+                >
+                  Small Scratch
+                </p>
               </div>
               <div className="point">
                 <div
                   style={{
                     backgroundColor: "var(--primary-color)",
-                    color: "white",
-                    padding: "5px 10px",
-                    borderRadius: "5px",
-                    fontSize: "12px",
-                    fontWeight: "bold",
+                    color: "var(--black-color)",
+                    padding: "8px 15px",
+                    borderRadius: "50%",
+                    fontSize: "14px",
+                    fontWeight: "700",
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                    width: "40px",
+                    height: "40px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "8px",
                   }}
                 >
                   A2
                 </div>
-                <p>Scratch</p>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: "500",
+                    color: "var(--black-color)",
+                    textAlign: "left", // Change from center to left
+                    maxWidth: "100%",
+                  }}
+                >
+                  Scratch
+                </p>
               </div>
               <div className="point">
                 <div
                   style={{
                     backgroundColor: "var(--primary-color)",
-                    color: "white",
-                    padding: "5px 10px",
-                    borderRadius: "5px",
-                    fontSize: "12px",
-                    fontWeight: "bold",
+                    color: "var(--black-color)",
+                    padding: "8px 15px",
+                    borderRadius: "50%",
+                    fontSize: "14px",
+                    fontWeight: "700",
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                    width: "40px",
+                    height: "40px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "8px",
                   }}
                 >
                   B1
                 </div>
-                <p>Small dent with scratch (size like a thumb)</p>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: "500",
+                    color: "var(--black-color)",
+                    textAlign: "left", // Change from center to left
+                    maxWidth: "100%",
+                  }}
+                >
+                  Small dent with scratch (size like a thumb)
+                </p>
               </div>
               <div className="point">
                 <div
                   style={{
                     backgroundColor: "var(--primary-color)",
-                    color: "white",
-                    padding: "5px 10px",
-                    borderRadius: "5px",
-                    fontSize: "12px",
-                    fontWeight: "bold",
+                    color: "var(--black-color)",
+                    padding: "8px 15px",
+                    borderRadius: "50%",
+                    fontSize: "14px",
+                    fontWeight: "700",
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                    width: "40px",
+                    height: "40px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "8px",
                   }}
                 >
                   B2
                 </div>
-                <p>Dent with scratch (size like flat of the hand)</p>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: "500",
+                    color: "var(--black-color)",
+                    textAlign: "left", // Change from center to left
+                    maxWidth: "100%",
+                  }}
+                >
+                  Dent with scratch (size like flat of the hand)
+                </p>
               </div>
               <div className="point">
                 <div
                   style={{
                     backgroundColor: "var(--primary-color)",
-                    color: "white",
-                    padding: "5px 10px",
-                    borderRadius: "5px",
-                    fontSize: "12px",
-                    fontWeight: "bold",
+                    color: "var(--black-color)",
+                    padding: "8px 15px",
+                    borderRadius: "50%",
+                    fontSize: "14px",
+                    fontWeight: "700",
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                    width: "40px",
+                    height: "40px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "8px",
                   }}
                 >
                   D2
                 </div>
-                <p>Dent</p>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: "500",
+                    color: "var(--black-color)",
+                    textAlign: "left", // Change from center to left
+                    maxWidth: "100%",
+                  }}
+                >
+                  Dent
+                </p>
               </div>
               <div className="point">
                 <div
                   style={{
                     backgroundColor: "var(--primary-color)",
-                    color: "white",
-                    padding: "5px 10px",
-                    borderRadius: "5px",
-                    fontSize: "12px",
-                    fontWeight: "bold",
+                    color: "var(--black-color)",
+                    padding: "8px 15px",
+                    borderRadius: "50%",
+                    fontSize: "14px",
+                    fontWeight: "700",
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                    width: "40px",
+                    height: "40px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "8px",
                   }}
                 >
                   P
                 </div>
-                <p>Paint Marked</p>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: "500",
+                    color: "var(--black-color)",
+                    textAlign: "left", // Change from center to left
+                    maxWidth: "100%",
+                  }}
+                >
+                  Paint Marked
+                </p>
               </div>
             </div>
           </div>

@@ -47,10 +47,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .VehicleInspectionReportContainer {
-    margin-top: 5rem !important;
-    margin-bottom: 5rem !important;
-  }
+
 }
 
 .accordion-body {
@@ -69,10 +66,15 @@ body {
   border: none !important;
 }
 
+.points {
+  align-items: flex-start !important;  /* Change from center to flex-start */
+}
+
+/* Update the point class styles */
 .point {
   gap: 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;  /* Change from center to flex-start */
+  width: 100%;  /* Ensure full width */
 }

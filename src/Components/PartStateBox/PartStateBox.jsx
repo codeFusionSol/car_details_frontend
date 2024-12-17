@@ -16,8 +16,8 @@ const PartStateBox = ({ data, index }) => {
       style={{
         width: "100%",
         maxWidth: "300px",
+        minHeight: "160px",
         maxHeight: "160px",
-        height: "165px",
         borderRadius: "0px",
         textAlign: "center",
         overflow: "hidden",
@@ -38,20 +38,22 @@ const PartStateBox = ({ data, index }) => {
       </div>
 
       {/* Button Section */}
-      {data?.data?.image?.url && (
-        <>
-          <div
-            style={{
-              backgroundColor: "#f9f9f9",
-              fontSize: "14px",
-              fontWeight: "bold",
-              paddingBottom: "15px",
-              color: "#333",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+
+      <>
+        <div
+          style={{
+            backgroundColor: "#f9f9f9",
+            fontSize: "14px",
+            fontWeight: "bold",
+            paddingBottom: "15px",
+            color: "#333",
+            display: "flex",
+            minHeight: "45px",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {data?.data?.image?.url && (
             <button
               onClick={openModal}
               style={{
@@ -77,9 +79,9 @@ const PartStateBox = ({ data, index }) => {
               />
               View Image
             </button>
-          </div>
-        </>
-      )}
+          )}
+        </div>
+      </>
 
       {/* Status Section */}
       <div
@@ -126,12 +128,12 @@ const PartStateBox = ({ data, index }) => {
             overflow: "auto",
             backgroundColor: "rgba(0, 0, 0, 0.9)",
             justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
           }}
         >
           <span
             style={{
-              position: "fixed", 
+              position: "fixed",
               top: "15px",
               right: "35px",
               color: "#f1f1f1",
@@ -153,7 +155,7 @@ const PartStateBox = ({ data, index }) => {
               width: "100%",
               objectFit: "contain",
               WebkitAnimationName: "zoom",
-              WebkitAnimationDuration: "0.6s", 
+              WebkitAnimationDuration: "0.6s",
               animationName: "zoom",
               animationDuration: "0.6s",
             }}

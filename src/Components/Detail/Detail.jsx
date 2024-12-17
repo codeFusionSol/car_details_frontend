@@ -1,9 +1,11 @@
+import { useState } from "react";
 import PartStateBox from "../PartStateBox/PartStateBox";
 import "./Detail.css";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 const Detail = ({ AllFormsData }) => {
   const pictures = AllFormsData?.find((item) => item.name === "Pictures");
   // console.log(pictures);
+  const [activeSections, setActiveSections] = useState([]);
   const sections = [
     "Body Frame Accident Checklist",
     "Engine / Transmission / Clutch",
@@ -16,6 +18,21 @@ const Detail = ({ AllFormsData }) => {
     "Tyres",
     "Test Drive",
   ];
+
+  const handleClick = (section, index) => {
+    console.log(section);
+
+    const findSextion = activeSections.find(
+      (item) => item.name === section.name
+    );
+    if (findSextion) {
+      setActiveSections((prev) =>
+        prev.filter((item) => item.name !== section.name)
+      );
+    } else {
+      setActiveSections((prev) => [...prev, section]);
+    }
+  };
 
   const renderImagePlaceholders = () => (
     <div className="row g-3 p-4">
@@ -62,6 +79,7 @@ const Detail = ({ AllFormsData }) => {
                 return (
                   <div className="accordion-item " key={index}>
                     <button
+                      onClick={() => handleClick(section, index)}
                       className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
@@ -72,39 +90,55 @@ const Detail = ({ AllFormsData }) => {
                       {sections[index]}
                       <span className="ms-auto ">
                         <img
-                          src="/assets/icons/plusIcon.png"
+                          src={
+                            activeSections.includes(section)
+                              ? "/assets/icons/minus.png"
+                              : "/assets/icons/plusIcon.png"
+                          }
                           width="30px"
                           alt="plusIcon"
                         />
                       </span>
                     </button>
                     <div
-                      id={`collapse${index}`}
-                      className="accordion-collapse collapse"
-                      aria-labelledby={`heading${index}`}
-                      data-bs-parent="#inspectionAccordion"
+                      id={`collapse`}
+                      className={`accordion-collapse collapse ${
+                        activeSections.includes(section) ? "show" : ""
+                      }`}
                     >
-                      <div className="accordion-body d-flex flex-wrap gap-2">
-                        {AllFormsData[index]?.data?.imageValueChecks?.map(
-                          (item, idx) => (
-                            <PartStateBox key={idx} data={item} index={index} />
-                          )
-                        )}
+                      <div
+                        className="accordion-body d-flex flex-wrap gap-2"
+                        style={{
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        {activeSections.includes(section) &&
+                          AllFormsData[index]?.data?.imageValueChecks?.map(
+                            (item, idx) => (
+                              <PartStateBox
+                                key={idx}
+                                data={item}
+                                index={index}
+                              />
+                            )
+                          )}
 
-                        {Object.keys(AllFormsData[index]?.data || {}).map(
-                          (key) => {
-                            const section = AllFormsData[index]?.data[key];
-                            return section?.imageValueChecks?.map(
-                              (item, idx) => (
-                                <PartStateBox
-                                  key={`${key}-${idx}`}
-                                  data={item}
-                                  index={index}
-                                />
-                              )
-                            );
-                          }
-                        )}
+                        {activeSections.includes(section) &&
+                          Object.keys(AllFormsData[index]?.data || {}).map(
+                            (key) => {
+                              const sectionData =
+                                AllFormsData[index]?.data[key];
+                              return sectionData?.imageValueChecks?.map(
+                                (item, idx) => (
+                                  <PartStateBox
+                                    key={`${key}-${idx}`}
+                                    data={item}
+                                    index={index}
+                                  />
+                                )
+                              );
+                            }
+                          )}
                       </div>
                     </div>
                   </div>

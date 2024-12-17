@@ -230,7 +230,7 @@ const vehicleInspectionReport = ({ AllFormsData, data }) => {
       <div className="container-fluid m-0 p-0">
         <div className="row m-0 p-0">
           <div
-            className="col-md-6 m-0 p-0"
+            className="col-md-6 m-0 p-0 d-md-flex d-none"
             style={{
               maxHeight: "484px",
             }}

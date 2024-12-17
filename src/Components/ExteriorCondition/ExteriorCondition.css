@@ -20,7 +20,6 @@
 }
 
 .leftView {
-  /* border: 1px solid red; */
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -28,8 +27,8 @@
   height: 290px;
 }
 
-.rearLeftFender {
-  /* border: 1px solid red; */
+.rearLeftFender,
+.rearRightFender {
   width: 15%;
   height: 100px;
   display: flex;
@@ -38,8 +37,8 @@
   justify-content: center;
 }
 
-.FrontLeftDoor2 {
-  /* border: 1px solid red; */
+.FrontLeftDoor2,
+.FrontRightDoor2 {
   width: 12%;
   height: 100px;
   display: flex;
@@ -48,8 +47,8 @@
   justify-content: center;
 }
 
-.FrontLeftDoor1 {
-  /* border: 1px solid red; */
+.FrontLeftDoor1,
+.FrontRightDoor1 {
   width: 12%;
   display: flex;
   flex-direction: column;
@@ -58,8 +57,8 @@
   height: 100px;
 }
 
-.FrontLeftFender {
-  /* border: 1px solid red; */
+.FrontLeftFender,
+.FrontRightFender {
   width: 15%;
   height: 100px;
   display: flex;
@@ -69,7 +68,6 @@
 }
 
 .topView {
-  /* border: 1px solid red; */
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -78,7 +76,6 @@
 }
 
 .rightView {
-  /* border: 1px solid red; */
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -87,7 +84,6 @@
 }
 
 .rearBumper {
-  /* border: 1px solid red; */
   width: 8%;
   display: flex;
   justify-content: space-evenly;
@@ -96,7 +92,6 @@
 }
 
 .trunk {
-  /* border: 1px solid red; */
   width: 5%;
   display: flex;
   justify-content: space-evenly;
@@ -105,7 +100,6 @@
 }
 
 .roof {
-  /* border: 1px solid red; */
   width: 55%;
   display: flex;
   justify-content: center;
@@ -115,7 +109,6 @@
 }
 
 .boonet {
-  /* border: 1px solid red; */
   width: 7%;
   display: flex;
   justify-content: space-evenly;
@@ -124,7 +117,6 @@
 }
 
 .frontBumper {
-  /* border: 1px solid red; */
   width: 7%;
   display: flex;
   justify-content: space-evenly;
@@ -133,34 +125,38 @@
 }
 
 .pointDiv {
-  background-color: var(--primary-color);
-  color: var(--white-color);
+  color: red;
   border-radius: 50%;
-  padding: 5px 8px;
-  width: 30px;
+  padding: 8px 15px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
 }
 
 @media (max-width: 1025px) {
   .leftView {
     height: 200px;
-    /* border: 1px solid red; */
   }
   .topView {
     height: 250px;
-    /* border: 1px solid red; */
   }
   .rightView {
-    /* border: 1px solid red; */
     height: 200px;
   }
 
   .rearLeftFender,
+  .rearRightFender,
   .FrontLeftDoor1,
+  .FrontRightDoor1,
   .FrontLeftDoor2,
-  .FrontLeftFender {
+  .FrontRightDoor2,
+  .FrontLeftFender,
+  .FrontRightFender {
     flex-direction: column;
     gap: 10px;
   }
@@ -174,8 +170,11 @@
   }
 
   .rearLeftFender,
+  .rearRightFender,
   .FrontLeftDoor1,
-  .FrontLeftDoor2 {
+  .FrontLeftDoor2,
+  .FrontRightDoor1,
+  .FrontRightDoor2 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -189,26 +188,28 @@
 
 @media (max-width: 768px) {
   .pointDiv {
-    width: 23px;
-    height: 23px;
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
   }
   .leftView {
     height: 160px;
-    /* border: 1px solid red; */
   }
   .topView {
     height: 190px;
-    /* border: 1px solid red; */
   }
   .rightView {
-    /* border: 1px solid red; */
     height: 160px;
   }
 
   .rearLeftFender,
+  .rearRightFender,
   .FrontLeftDoor1,
+  .FrontRightDoor1,
   .FrontLeftDoor2,
-  .FrontLeftFender {
+  .FrontRightDoor2,
+  .FrontLeftFender,
+  .FrontRightFender {
     gap: 10px;
     align-items: center;
   }
@@ -216,9 +217,10 @@
 
 @media (max-width: 576px) {
   .pointDiv {
-    width: 15px;
+    width: 25px;
+    height: 25px;
     font-size: 10px;
-    height: 15px;
+    padding: 5px;
   }
 
   .leftView {
@@ -233,7 +235,9 @@
 
   .rearLeftFender,
   .FrontLeftDoor1,
-  .FrontLeftDoor2 {
+  .FrontLeftDoor2,
+  .FrontRightDoor1,
+  .FrontRightDoor2 {
     flex-direction: column;
     align-items: start;
     justify-content: center;
@@ -252,14 +256,12 @@
   }
 }
 
-
-
 @media (max-width: 400px) {
   .pointDiv {
-    width: 10px;
+    width: 20px;
+    height: 20px;
     font-size: 8px;
-    padding: 7px;
-    height: 10px;
+    padding: 3px;
   }
 
   .leftView {
@@ -273,8 +275,11 @@
   }
 
   .rearLeftFender,
+  .rearRightFender,
   .FrontLeftDoor1,
-  .FrontLeftDoor2 {
+  .FrontLeftDoor2,
+  .FrontRightDoor1,
+  .FrontRightDoor2 {
     flex-direction: column;
     align-items: start;
     justify-content: center;
@@ -306,7 +311,9 @@
 
   .rearLeftFender,
   .FrontLeftDoor1,
-  .FrontLeftDoor2 {
+  .FrontLeftDoor2,
+  .FrontRightDoor1,
+  .FrontRightDoor2 {
     flex-direction: column;
     align-items: start;
     justify-content: center;

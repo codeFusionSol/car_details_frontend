@@ -12,11 +12,9 @@ const CarDetails = ({ data }) => {
             style={{ objectFit: "cover" }}
             alt="Toyota Aqua 2014"
           />
-          <h2 className="car-title mt-2 text-left">
-            {carDetails?.name} {carDetails?.registeredYear}
-          </h2>
+          <h2 className="car-title mt-2 text-left">{carDetails?.name}</h2>
           <p className="car-model">
-            Model <span></span>
+            Model <span>{carDetails?.registeredYear}</span>
           </p>
         </div>
         <div className="car-details">
@@ -94,43 +92,43 @@ const CarDetails = ({ data }) => {
           </table>
 
           <div className="carDetailsMobile">
-            <p>
-              Drive Type: <span>{carDetails?.driveType || "N/A"}</span>
+            <p className="carDetailsMobileItem">
+              Drive Type  <span>{carDetails?.driveType || "N/A"}</span>
             </p>
-            <p>
-              Mileage: <span>{carDetails?.mileage || "N/A"}</span>
+            <p className="carDetailsMobileItem">
+              Mileage <span>{carDetails?.mileage || "N/A"}</span>
             </p>
-            <p>
-              Inspection Date:{" "}
+            <p className="carDetailsMobileItem">
+              Inspection Date{" "}
               <span>{carDetails?.inspectionDate.slice(0, 10) || "N/A"}</span>
             </p>
-            <p>
-              Engine No.: <span>{carDetails?.engineNo || "N/A"}</span>
+            <p className="carDetailsMobileItem">
+              Engine No. <span>{carDetails?.engineNo || "N/A"}</span>
             </p>
-            <p>
-              Transmission Type:{" "}
+            <p className="carDetailsMobileItem" >
+              Transmission Type{" "}
               <span>{carDetails?.transmissionType || "N/A"}</span>
             </p>
-            <p>
-              CNG Install: <span>{carDetails?.cngInstall ? "Yes" : "No"}</span>
+            <p className="carDetailsMobileItem">
+              CNG Install <span>{carDetails?.cngInstall ? "Yes" : "No"}</span>
             </p>
-            <p>
-              Engine Capacity:{" "}
+            <p className="carDetailsMobileItem" >
+              Engine Capacity{" "}
               <span>{carDetails?.engineCapacity || "N/A"}</span>
             </p>
-            <p>
-              Chassis No.: <span>{carDetails?.chassisNo || "N/A"}</span>
+            <p className="carDetailsMobileItem">
+              Chassis No. <span>{carDetails?.chassisNo || "N/A"}</span>
             </p>
-            <p>
-              Registered City:{" "}
+            <p className="carDetailsMobileItem" >
+              Registered City{" "}
               <span>{carDetails?.registeredCity || "N/A"}</span>
             </p>
-            <p>
-              Registration No.:{" "}
+            <p className="carDetailsMobileItem">
+              Registration No.{" "}
               <span>{carDetails?.registrationNo || "N/A"}</span>
             </p>
-            <p>
-              Colour: <span>{carDetails?.colour || "N/A"}</span>
+            <p className="carDetailsMobileItem">
+              Colour <span>{carDetails?.colour || "N/A"}</span>
             </p>
           </div>
         </div>
