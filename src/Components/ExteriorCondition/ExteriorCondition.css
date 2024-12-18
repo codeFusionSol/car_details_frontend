@@ -134,7 +134,7 @@
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
 }
 
@@ -258,9 +258,9 @@
 
 @media (max-width: 400px) {
   .pointDiv {
-    width: 20px;
-    height: 20px;
-    font-size: 8px;
+    width: 8px;
+    height: 8px;
+    font-size: 10px !important;
     padding: 3px;
   }
 

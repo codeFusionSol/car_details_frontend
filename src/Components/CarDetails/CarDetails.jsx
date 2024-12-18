@@ -12,8 +12,8 @@ const CarDetails = ({ data }) => {
             style={{ objectFit: "cover" }}
             alt="Toyota Aqua 2014"
           />
-          <h2 className="car-title mt-2 text-left">{carDetails?.name}</h2>
-          <p className="car-model">
+          <h2 className="car-title mt-2 text-center">{carDetails?.name}</h2>
+          <p className="car-model text-center">
             Model <span>{carDetails?.registeredYear}</span>
           </p>
         </div>
@@ -22,7 +22,7 @@ const CarDetails = ({ data }) => {
             <tr>
               <td className="borderRight borderBottom">
                 {" "}
-                drive Type
+                Drive Type
                 <span>{carDetails?.driveType}</span>
               </td>
               <td className="borderRight borderBottom">
@@ -47,13 +47,13 @@ const CarDetails = ({ data }) => {
             <tr>
               <td className="borderRight borderBottom">
                 {" "}
-                CNG INSTALL{" "}
-                <span> {carDetails?.cngInstall ? "Yes" : "No"}</span>
+                Engine Capacity{" "}
+                <span> {carDetails?.engineCapacity || "N/A"}</span>
               </td>
               <td className="borderRight borderBottom">
                 {" "}
-                Engine Capacity{" "}
-                <span> {carDetails?.engineCapacity || "N/A"}</span>
+                CNG INSTALL{" "}
+                <span> {carDetails?.cngInstall ? "Yes" : "No"}</span>
               </td>
               <td className="borderRight borderBottom">
                 {" "}
@@ -71,19 +71,20 @@ const CarDetails = ({ data }) => {
               </td>
             </tr>
             <tr>
+              <td className=" ">
+                {" "}
+              </td>
+              <td className="borderRight ">
+                {" "}
+                {/* Engine <span>Value</span> */}
+              </td>
               <td className="borderRight ">
                 {" "}
                 Colour <span> {carDetails?.colour || "N/A"}</span>
-              </td>
-              <td className="borderRight ">
-                {" "}
+
                 {/* Engine <span>Value</span> */}
               </td>
-              <td className="borderRight ">
-                {" "}
-                {/* Engine <span>Value</span> */}
-              </td>
-              <td className="borderRight ">
+              <td className=" ">
                 {" "}
                 {/* Engine <span>Value</span> */}
               </td>
@@ -93,7 +94,7 @@ const CarDetails = ({ data }) => {
 
           <div className="carDetailsMobile">
             <p className="carDetailsMobileItem">
-              Drive Type  <span>{carDetails?.driveType || "N/A"}</span>
+              Drive Type <span>{carDetails?.driveType || "N/A"}</span>
             </p>
             <p className="carDetailsMobileItem">
               Mileage <span>{carDetails?.mileage || "N/A"}</span>
@@ -105,23 +106,21 @@ const CarDetails = ({ data }) => {
             <p className="carDetailsMobileItem">
               Engine No. <span>{carDetails?.engineNo || "N/A"}</span>
             </p>
-            <p className="carDetailsMobileItem" >
+            <p className="carDetailsMobileItem">
               Transmission Type{" "}
               <span>{carDetails?.transmissionType || "N/A"}</span>
             </p>
             <p className="carDetailsMobileItem">
-              CNG Install <span>{carDetails?.cngInstall ? "Yes" : "No"}</span>
+              Engine Capacity <span>{carDetails?.engineCapacity || "N/A"}</span>
             </p>
-            <p className="carDetailsMobileItem" >
-              Engine Capacity{" "}
-              <span>{carDetails?.engineCapacity || "N/A"}</span>
+            <p className="carDetailsMobileItem">
+              CNG Install <span>{carDetails?.cngInstall ? "Yes" : "No"}</span>
             </p>
             <p className="carDetailsMobileItem">
               Chassis No. <span>{carDetails?.chassisNo || "N/A"}</span>
             </p>
-            <p className="carDetailsMobileItem" >
-              Registered City{" "}
-              <span>{carDetails?.registeredCity || "N/A"}</span>
+            <p className="carDetailsMobileItem">
+              Registered City <span>{carDetails?.registeredCity || "N/A"}</span>
             </p>
             <p className="carDetailsMobileItem">
               Registration No.{" "}

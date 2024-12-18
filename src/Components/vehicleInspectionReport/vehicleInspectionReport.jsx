@@ -210,19 +210,19 @@ const vehicleInspectionReport = ({ AllFormsData, data }) => {
 
   const dummyData = [
     { label: "Body Frame Check List", value: bodyFramePercentage },
-    {
-      label: "Engine / Transmission / Clutch",
-      value: engineTransmissionClutchPercentage,
-    },
-    { label: "Brakes", value: brakesPercentage },
-    { label: "Suspension/Steering", value: suspensionSteeringPercentage },
     { label: "Interior", value: interiorPercentage },
-    { label: "AC / Heater", value: acHeaterPercentage },
     {
       label: "Electrical & Electronics",
       value: electricalElectronicsPercentage,
     },
+    { label: "Suspension / Steering", value: suspensionSteeringPercentage },
+    { label: "AC / Heater", value: acHeaterPercentage },
+    {
+      label: "Engine / Clutch / Transmission",
+      value: engineTransmissionClutchPercentage,
+    },
     { label: "Exterior", value: exteriorPercentage },
+    { label: "Brakes", value: brakesPercentage },
   ];
 
   return (
@@ -243,68 +243,80 @@ const vehicleInspectionReport = ({ AllFormsData, data }) => {
           </div>
           <div className="col-md-6 d-flex flex-column justify-content-center align-items-center reportContainer px-0">
             <div className="overall-rating">
-              <div className="single-chart">
-                <svg
-                  viewBox="0 0 36 36"
-                  className="circular-chart overAllRating orange"
+              <svg
+                viewBox="0 0 36 36"
+                className="circular-chart overAllRating orange my-0"
+              >
+                <path
+                  className="circle-bg"
+                  d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  className="circle"
+                  strokeDasharray={`${overallPercentage}, 100`}
+                  d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <text
+                  x="18"
+                  y="20.35"
+                  className="percentage"
+                  style={{
+                    fontSize: "8px",
+                    fontWeight: "500",
+                  }}
                 >
+                  {overallPercentage}%
+                </text>
+              </svg>
+              <span
+                style={{
+                  fontSize:"14px" ,
+                  textAlign: "center",
+                  fontWeight: "500",
+                }}
+              >
+                OverAll Percentage
+              </span>
+            </div>
+
+          <div className="flex-wrapper">
+            {dummyData.map((item, index) => (
+              <div className="single-chart" key={index}>
+                <svg viewBox="0 0 36 36" className="circular-chart orange">
                   <path
                     className="circle-bg"
                     d="M18 2.0845
-        a 15.9155 15.9155 0 0 1 0 31.831
-        a 15.9155 15.9155 0 0 1 0 -31.831"
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
                   />
                   <path
                     className="circle"
-                    strokeDasharray={`${overallPercentage}, 100`}
+                    strokeDasharray={`${item.value}, 100`}
                     d="M18 2.0845
-        a 15.9155 15.9155 0 0 1 0 31.831
-        a 15.9155 15.9155 0 0 1 0 -31.831"
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
                   />
-                  <text
-                    x="18"
-                    y="18"
-                    className="overAllRating percentage"
-                    dominantBaseline="middle"
-                    id="overAllRatingPercentage"
-                  >
-                    {overallPercentage}%
-                  </text>
-                  <text x="18" y="24" className="overAllRating percentage">
-                    Overall Rating
+                  <text x="18" y="20.35" className="percentage">
+                    {item.value}%
                   </text>
                 </svg>
+                <span
+                  style={{
+                    fontSize: window.innerWidth <= 768 ? "11px" : "12px",
+                    textAlign: "center",
+                  }}
+                >
+                  {item.label}
+                </span>
               </div>
-            </div>
-            <div className="flex-wrapper">
-              {dummyData.map((item, index) => (
-                <div className="single-chart" key={index}>
-                  <svg viewBox="0 0 36 36" className="circular-chart orange">
-                    <path
-                      className="circle-bg"
-                      d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <path
-                      className="circle"
-                      strokeDasharray={`${item.value}, 100`}
-                      d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <text x="18" y="20.35" className="percentage">
-                      {item.value}%
-                    </text>
-                  </svg>
-                  <span style={{ fontSize: "12px", textAlign: "center" }}>
-                    {item.label}
-                  </span>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
+      </div>
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./ExteriorCondition.css";
 const ExteriorCondition = ({ AllFormsData, data }) => {
-  console.log(AllFormsData);
+  // console.log(AllFormsData);
   const [leftView, setLeftView] = useState(null);
   const [topView, setTopView] = useState(null);
   const [rightView, setRightView] = useState(null);

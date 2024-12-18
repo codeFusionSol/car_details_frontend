@@ -40,8 +40,6 @@ body {
   --green-color: #deffcf;
   --red-color: #ffa5a5;
   --orange-color: #ffcc80;
-
-
 }
 
 .VehicleInspectionReportContainer {
@@ -50,12 +48,16 @@ body {
 }
 
 @media (max-width: 768px) {
-
+  .VehicleInspectionReportContainer {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+  }
 }
 
 .accordion-body {
   padding-left: 0 !important;
   padding-right: 0 !important;
+  font-weight: normal !important;
 }
 
 .accordion-button:focus {
@@ -70,7 +72,7 @@ body {
 }
 
 .points {
-  align-items: flex-start !important;  /* Change from center to flex-start */
+  align-items: flex-start !important; /* Change from center to flex-start */
 }
 
 /* Update the point class styles */
@@ -78,6 +80,6 @@ body {
   gap: 10px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;  /* Change from center to flex-start */
-  width: 100%;  /* Ensure full width */
+  justify-content: flex-start; /* Change from center to flex-start */
+  width: 100%; /* Ensure full width */
 }

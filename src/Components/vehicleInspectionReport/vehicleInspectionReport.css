@@ -2,27 +2,29 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .single-chart {
-  width: 33%;
-  justify-content: center;
+  width: 33% !important;
+  min-height: 130px !important ;
+  justify-content: flex-start;
   display: flex;
   align-items: center;
   flex-direction: column;
+  /* border: 1px solid lightgray; */
 }
 
 .circular-chart {
   display: block;
   margin: 10px auto;
-  width: 82px;
-  height: 82px;
+  width: 84px;
+  height: 84px;
 }
 
 .overAllRating {
-  width: 120px !important;
-  height: 120px !important;
+  width: 100px !important;
+  height: 100px !important;
 }
 
 .circle-bg {
@@ -69,15 +71,22 @@
 }
 
 @media (max-width: 768px) {
-  .single-chart {
-    width: 50%;
+  .circle-chart {
+    width: 50% !important;
   }
   .reportContainer {
     max-height: 100% !important;
   }
+
+  .circular-chart {
+    width: 62px;
+    height: 62px;
+  }
+  .overAllRating {
+    width: 80px;
+    height: 80px;
+  }
 }
-
-
 
 .overAllRating.percentage {
   font-weight: bold;
@@ -94,4 +103,3 @@
 .reportContainer {
   max-height: 484px;
 }
-

@@ -6,11 +6,11 @@ import Navbar from "../../Components/Navbar/Navbar.jsx";
 import VehicleInspectionReport from "../../Components/vehicleInspectionReport/vehicleInspectionReport.jsx";
 
 const Home = ({ data, AllFormsData }) => {
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <>
       <Navbar />
-      <br />
-      <br />
       <div className="container">
         <div className="row">
           <div className="col-12 d-flex  justify-content-center">
@@ -29,21 +29,24 @@ const Home = ({ data, AllFormsData }) => {
           </div>
           <div
             className="col-12 d-flex justify-content-between "
-            style={{ marginBottom: "50px" }}
+            style={{ marginBottom: "10px" }}
           >
-            <div className="points d-flex flex-column flex-wrap justify-content-center gap-4 mt-5">
+            <div
+              className="points d-flex flex-column flex-wrap justify-content-center gap-1
+             mt-md-5 mt-4"
+            >
               <div className="point">
                 <div
                   style={{
                     backgroundColor: "var(--primary-color)",
                     color: "var(--black-color)",
-                    padding: "8px 15px",
+                    padding: isMobile ? "8px" : "8px 15px",
                     borderRadius: "50%",
-                    fontSize: "14px",
-                    fontWeight: "700",
+                    fontSize: isMobile ? "10px" : "14px",
+                    fontWeight: "500",
                     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                    width: "40px",
-                    height: "40px",
+                    width: isMobile ? "25px" : "40px",
+                    height: isMobile ? "25px" : "40px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -54,11 +57,12 @@ const Home = ({ data, AllFormsData }) => {
                 </div>
                 <p
                   style={{
-                    fontSize: "13px",
+                    fontSize: isMobile ? "11px" : "13px",
                     fontWeight: "500",
                     color: "var(--black-color)",
                     textAlign: "left", // Change from center to left
                     maxWidth: "100%",
+                    padding: "0 0 7px 0 !important",
                   }}
                 >
                   Small Scratch
@@ -69,13 +73,13 @@ const Home = ({ data, AllFormsData }) => {
                   style={{
                     backgroundColor: "var(--primary-color)",
                     color: "var(--black-color)",
-                    padding: "8px 15px",
+                    padding: isMobile ? "8px" : "8px 15px",
                     borderRadius: "50%",
-                    fontSize: "14px",
-                    fontWeight: "700",
+                    fontSize: isMobile ? "10px" : "14px",
+                    fontWeight: "500",
                     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                    width: "40px",
-                    height: "40px",
+                    width: isMobile ? "25px" : "40px",
+                    height: isMobile ? "25px" : "40px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -86,11 +90,12 @@ const Home = ({ data, AllFormsData }) => {
                 </div>
                 <p
                   style={{
-                    fontSize: "13px",
+                    fontSize: isMobile ? "11px" : "13px",
                     fontWeight: "500",
                     color: "var(--black-color)",
                     textAlign: "left", // Change from center to left
                     maxWidth: "100%",
+                    padding: "0 0 7px 0 !important",
                   }}
                 >
                   Scratch
@@ -101,13 +106,13 @@ const Home = ({ data, AllFormsData }) => {
                   style={{
                     backgroundColor: "var(--primary-color)",
                     color: "var(--black-color)",
-                    padding: "8px 15px",
+                    padding: isMobile ? "8px" : "8px 15px",
                     borderRadius: "50%",
-                    fontSize: "14px",
-                    fontWeight: "700",
+                    fontSize: isMobile ? "10px" : "14px",
+                    fontWeight: "500",
                     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                    width: "40px",
-                    height: "40px",
+                    width: isMobile ? "25px" : "40px",
+                    height: isMobile ? "25px" : "40px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -118,11 +123,12 @@ const Home = ({ data, AllFormsData }) => {
                 </div>
                 <p
                   style={{
-                    fontSize: "13px",
+                    fontSize: isMobile ? "11px" : "13px",
                     fontWeight: "500",
                     color: "var(--black-color)",
                     textAlign: "left", // Change from center to left
                     maxWidth: "100%",
+                    padding: "0 0 7px 0 !important",
                   }}
                 >
                   Small dent with scratch (size like a thumb)
@@ -133,13 +139,13 @@ const Home = ({ data, AllFormsData }) => {
                   style={{
                     backgroundColor: "var(--primary-color)",
                     color: "var(--black-color)",
-                    padding: "8px 15px",
+                    padding: isMobile ? "8px" : "8px 15px",
                     borderRadius: "50%",
-                    fontSize: "14px",
-                    fontWeight: "700",
+                    fontSize: isMobile ? "10px" : "14px",
+                    fontWeight: "500",
                     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                    width: "40px",
-                    height: "40px",
+                    width: isMobile ? "25px" : "40px",
+                    height: isMobile ? "25px" : "40px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -150,11 +156,12 @@ const Home = ({ data, AllFormsData }) => {
                 </div>
                 <p
                   style={{
-                    fontSize: "13px",
+                    fontSize: isMobile ? "11px" : "13px",
                     fontWeight: "500",
                     color: "var(--black-color)",
                     textAlign: "left", // Change from center to left
                     maxWidth: "100%",
+                    padding: "0 0 7px 0 !important",
                   }}
                 >
                   Dent with scratch (size like flat of the hand)
@@ -165,13 +172,13 @@ const Home = ({ data, AllFormsData }) => {
                   style={{
                     backgroundColor: "var(--primary-color)",
                     color: "var(--black-color)",
-                    padding: "8px 15px",
+                    padding: isMobile ? "8px" : "8px 15px",
                     borderRadius: "50%",
-                    fontSize: "14px",
-                    fontWeight: "700",
+                    fontSize: isMobile ? "10px" : "14px",
+                    fontWeight: "500",
                     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                    width: "40px",
-                    height: "40px",
+                    width: isMobile ? "25px" : "40px",
+                    height: isMobile ? "25px" : "40px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -182,11 +189,12 @@ const Home = ({ data, AllFormsData }) => {
                 </div>
                 <p
                   style={{
-                    fontSize: "13px",
+                    fontSize: isMobile ? "11px" : "13px",
                     fontWeight: "500",
                     color: "var(--black-color)",
                     textAlign: "left", // Change from center to left
                     maxWidth: "100%",
+                    padding: "0 0 7px 0 !important",
                   }}
                 >
                   Dent
@@ -197,13 +205,13 @@ const Home = ({ data, AllFormsData }) => {
                   style={{
                     backgroundColor: "var(--primary-color)",
                     color: "var(--black-color)",
-                    padding: "8px 15px",
+                    padding: isMobile ? "8px" : "8px 15px",
                     borderRadius: "50%",
-                    fontSize: "14px",
-                    fontWeight: "700",
+                    fontSize: isMobile ? "10px" : "14px",
+                    fontWeight: "500",
                     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                    width: "40px",
-                    height: "40px",
+                    width: isMobile ? "25px" : "40px",
+                    height: isMobile ? "25px" : "40px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -214,11 +222,12 @@ const Home = ({ data, AllFormsData }) => {
                 </div>
                 <p
                   style={{
-                    fontSize: "13px",
+                    fontSize: isMobile ? "11px" : "13px",
                     fontWeight: "500",
                     color: "var(--black-color)",
                     textAlign: "left", // Change from center to left
                     maxWidth: "100%",
+                    padding: "0 0 7px 0 !important",
                   }}
                 >
                   Paint Marked
@@ -231,7 +240,7 @@ const Home = ({ data, AllFormsData }) => {
             <Detail AllFormsData={AllFormsData} />
           </div>
 
-          <div className="col-12 mt-5 d-flex justify-content-center">
+          <div className="col-12 mt-0 d-flex justify-content-center">
             <CommentsDisclaimer AllFormsData={AllFormsData} />
           </div>
         </div>

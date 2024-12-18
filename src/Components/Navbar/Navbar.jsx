@@ -4,8 +4,8 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg  navbarContainer">
-        <div className="container">
-          <div className="order-lg-0">
+        <div className="container navbarContainer2">
+          <div className="order-0">
             <img
               src="/assets/logo.png"
               alt="Logo"
@@ -14,16 +14,26 @@ const Navbar = () => {
             />
           </div>
 
-          <div className="order-lg-1">
-            <button className="printBtn" onClick={() => window.print()}>
+          <div className="order-2 d-flex flex-column justify-content-center">
+            {/* <button className="printBtn" onClick={() => window.print()}>
               <PrintIcon className="printIcon" /> PRINT REPORT
-            </button>
+            </button> */}
+            <div className="d-flex text-center justify-content-center">
+              <img
+                src="/assets/icons/car.png"
+                className="inspectionImg"
+                alt="car"
+                width="70px"
+              />
+            </div>
+            {/* <span className="mb-0 carInspection ">
+              CAR <span>INSPECTION</span> REPORT
+            </span> */}
           </div>
 
-          <div className="w-100 text-center align-items-center order-lg-0 my-1 my-lg-0">
+          <div className=" text-center align-items-center order-1 my-1 my-md-0 headingDiv">
             <span className="mb-0 carInspection ">
-              <img src="/assets/inspectionImg.png" className="inspectionImg" alt="car" width="255" />
-              {/* CAR <span>INSPECTION</span> */}
+              CAR <span>INSPECTION </span>REPORT
             </span>
           </div>
         </div>

@@ -1,7 +1,7 @@
 .navbarContainer {
   background-color: var(--black-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 8px 24px rgba(0, 0, 0, 0.1);
-  height: 100px;
+  height: 150px;
 }
 
 .printBtn {
@@ -31,7 +31,7 @@
 }
 
 .inspectionImg {
-  width: 200px;
+  /* width: 200px; */
 }
 
 @media (max-width: 768px) {
@@ -52,7 +52,46 @@
     width: 100px;
   }
 
+}
+
+@media (max-width: 576px) {
+
+  .carInspection {
+    font-size: 15px;
+  }
   .inspectionImg {
-    width: 200px;
+    width: 40px;
+  }
+.logo {
+  width: 100px;
+}
+
+  
+
+
+  .navbarContainer {
+    height: 70px;
+  }
+}
+
+@media (max-width: 325px) {
+
+  .carInspection {
+    font-size: 13px;
+  }
+  .inspectionImg {
+    width: 30px;
+  }
+.logo {
+  width: 100px;
+}
+
+  .navbarContainer2 {
+    padding:0 10px !important ;
+  }
+
+
+  .navbarContainer {
+    height: 70px;
   }
 }

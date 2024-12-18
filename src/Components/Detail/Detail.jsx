@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PartStateBox from "../PartStateBox/PartStateBox";
 import "./Detail.css";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 const Detail = ({ AllFormsData }) => {
+  // console.log(AllFormsData);
   const pictures = AllFormsData?.find((item) => item.name === "Pictures");
   // console.log(pictures);
-  const [activeSections, setActiveSections] = useState([]);
+  const [activeSections, setActiveSections] = useState([...AllFormsData]);
+  const isMobile = window.innerWidth <= 768;
+
+  useEffect(() => {
+    setActiveSections([...AllFormsData]);
+  }, [AllFormsData]);
+
   const [toggle, setToggle] = useState(false);
   const sections = [
     "Body Frame Accident Checklist",
@@ -77,6 +84,7 @@ const Detail = ({ AllFormsData }) => {
           display: "flex",
           alignItems: "center",
           gap: "10px",
+          padding: 0,
         }}
       >
         <style>
@@ -84,8 +92,8 @@ const Detail = ({ AllFormsData }) => {
             .switch {
               position: relative;
               display: inline-block;
-              width: 60px;
-              height: 34px;
+              width: 40px;
+              height: 24px;
             }
 
             .switch input {
@@ -108,8 +116,8 @@ const Detail = ({ AllFormsData }) => {
             .slider:before {
               position: absolute;
               content: "";
-              height: 26px;
-              width: 26px;
+              height: 16px;
+              width: 16px;
               left: 4px;
               bottom: 4px;
               background-color: white;
@@ -154,9 +162,12 @@ const Detail = ({ AllFormsData }) => {
         </label>
       </div>
 
-      <div className="container my-4" style={{ backgroundColor: "#fff" }}>
+      <div
+        className="container mt-md-4 mt-3"
+        style={{ backgroundColor: "#fff" }}
+      >
         {/* Accordion Section */}
-        <div className="p-4">
+        <div className="px-0 py-1">
           <div className="accordion" id="inspectionAccordion">
             {AllFormsData?.map((section, index) => {
               if (index < 9) {
@@ -164,7 +175,7 @@ const Detail = ({ AllFormsData }) => {
                   <div className="accordion-item " key={index}>
                     <button
                       onClick={() => handleClick(section, index)}
-                      className="accordion-button collapsed"
+                      className="accordion-button collapsed py-2"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target={`#collapse${index}`}
@@ -179,7 +190,7 @@ const Detail = ({ AllFormsData }) => {
                               ? "/assets/icons/minus.png"
                               : "/assets/icons/plusIcon.png"
                           }
-                          width="30px"
+                          width={isMobile ? "20px" : "30px"}
                           alt="plusIcon"
                         />
                       </span>
@@ -191,7 +202,7 @@ const Detail = ({ AllFormsData }) => {
                       }`}
                     >
                       <div
-                        className="accordion-body d-flex flex-wrap gap-2"
+                        className="accordion-body d-flex flex-wrap gap-md-2 gap-0 pt-1 pb-0"
                         style={{
                           transition: "all 0.3s ease",
                         }}
@@ -200,6 +211,10 @@ const Detail = ({ AllFormsData }) => {
                           AllFormsData[index]?.data?.imageValueChecks?.map(
                             (item, idx) => {
                               if (toggle) {
+                                console.log(item)
+                                if (AllFormsData[index].name === "Tyres") {
+                                  return null;
+                                }
                                 if (item?.data?.percentage <= 66) {
                                   console.log(item);
                                   return (
@@ -232,6 +247,11 @@ const Detail = ({ AllFormsData }) => {
                               return sectionData?.imageValueChecks?.map(
                                 (item, idx) => {
                                   if (toggle) {
+                                console.log(item)
+
+                                    if (AllFormsData[index].name === "Tyres") {
+                                      return null;
+                                    }
                                     if (item?.data?.percentage <= 66) {
                                       console.log(item);
                                       return (
@@ -269,7 +289,7 @@ const Detail = ({ AllFormsData }) => {
 
         {/* Vehicle Pictures */}
         <h5
-          className="mt-5 p-4 "
+          className="mt-1 p-4 "
           style={{
             textAlign: window.innerWidth <= 768 ? "center" : "left",
           }}
