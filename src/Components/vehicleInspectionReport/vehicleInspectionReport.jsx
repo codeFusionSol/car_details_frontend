@@ -241,7 +241,7 @@ const vehicleInspectionReport = ({ AllFormsData, data }) => {
               alt=""
             />
           </div>
-          <div className="col-md-6 d-flex flex-column justify-content-center align-items-center reportContainer">
+          <div className="col-md-6 d-flex flex-column justify-content-center align-items-center reportContainer px-0">
             <div className="overall-rating">
               <div className="single-chart">
                 <svg

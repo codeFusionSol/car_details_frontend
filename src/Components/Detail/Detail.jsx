@@ -6,6 +6,7 @@ const Detail = ({ AllFormsData }) => {
   const pictures = AllFormsData?.find((item) => item.name === "Pictures");
   // console.log(pictures);
   const [activeSections, setActiveSections] = useState([]);
+  const [toggle, setToggle] = useState(false);
   const sections = [
     "Body Frame Accident Checklist",
     "Engine / Transmission / Clutch",
@@ -70,6 +71,89 @@ const Detail = ({ AllFormsData }) => {
 
   return (
     <>
+      <div
+        style={{
+          padding: "20px",
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+        }}
+      >
+        <style>
+          {`
+            .switch {
+              position: relative;
+              display: inline-block;
+              width: 60px;
+              height: 34px;
+            }
+
+            .switch input {
+              opacity: 0;
+              width: 0;
+              height: 0;
+            }
+
+            .slider {
+              position: absolute;
+              cursor: pointer;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: #ccc;
+              transition: .4s;
+            }
+
+            .slider:before {
+              position: absolute;
+              content: "";
+              height: 26px;
+              width: 26px;
+              left: 4px;
+              bottom: 4px;
+              background-color: white;
+              transition: .4s;
+            }
+
+            input:checked + .slider {
+              background-color: var(--primary-color);
+            }
+
+            input:focus + .slider {
+              box-shadow: 0 0 1px var(--primary-color);
+            }
+
+            input:checked + .slider:before {
+              transform: translateX(26px);
+            }
+
+            .slider.round {
+              border-radius: 34px;
+            }
+
+            .slider.round:before {
+              border-radius: 50%;
+            }
+          `}
+        </style>
+
+        <span
+          style={{
+            fontWeight: 500,
+          }}
+        >
+          Checks the faults
+        </span>
+        <label className="switch">
+          <input
+            type="checkbox"
+            onChange={(e) => setToggle(e.target.checked)}
+          />
+          <span className="slider round"></span>
+        </label>
+      </div>
+
       <div className="container my-4" style={{ backgroundColor: "#fff" }}>
         {/* Accordion Section */}
         <div className="p-4">
@@ -114,13 +198,30 @@ const Detail = ({ AllFormsData }) => {
                       >
                         {activeSections.includes(section) &&
                           AllFormsData[index]?.data?.imageValueChecks?.map(
-                            (item, idx) => (
-                              <PartStateBox
-                                key={idx}
-                                data={item}
-                                index={index}
-                              />
-                            )
+                            (item, idx) => {
+                              if (toggle) {
+                                if (item?.data?.percentage <= 66) {
+                                  console.log(item);
+                                  return (
+                                    <PartStateBox
+                                      key={idx}
+                                      data={item}
+                                      index={index}
+                                      toggle={toggle}
+                                    />
+                                  );
+                                }
+                                return null;
+                              }
+                              return (
+                                <PartStateBox
+                                  key={idx}
+                                  data={item}
+                                  index={index}
+                                  toggle={toggle}
+                                />
+                              );
+                            }
                           )}
 
                         {activeSections.includes(section) &&
@@ -129,13 +230,30 @@ const Detail = ({ AllFormsData }) => {
                               const sectionData =
                                 AllFormsData[index]?.data[key];
                               return sectionData?.imageValueChecks?.map(
-                                (item, idx) => (
-                                  <PartStateBox
-                                    key={`${key}-${idx}`}
-                                    data={item}
-                                    index={index}
-                                  />
-                                )
+                                (item, idx) => {
+                                  if (toggle) {
+                                    if (item?.data?.percentage <= 66) {
+                                      console.log(item);
+                                      return (
+                                        <PartStateBox
+                                          key={`${key}-${idx}`}
+                                          data={item}
+                                          index={index}
+                                          toggle={toggle}
+                                        />
+                                      );
+                                    }
+                                    return null;
+                                  }
+                                  return (
+                                    <PartStateBox
+                                      key={`${key}-${idx}`}
+                                      data={item}
+                                      index={index}
+                                      toggle={toggle}
+                                    />
+                                  );
+                                }
                               );
                             }
                           )}

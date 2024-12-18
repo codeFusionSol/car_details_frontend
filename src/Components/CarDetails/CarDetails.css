@@ -123,12 +123,15 @@
   }
   .carDetailsMobile {
     margin-top: 55px;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     padding: 15px;
     border-radius: 8px;
   }
   .carDetailsMobile p {
-    padding: 14px;
+    padding: 14px 0;
     margin: 8px 0;
     border-bottom: 1px solid #eee;
     font-size: 18px;
@@ -158,6 +161,8 @@
 
 .carDetailsMobileItem {
   display: flex;
+  width: 50%;
+  text-align: center;
   gap: 10px;
   justify-content: center;
   align-items: center;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const PartStateBox = ({ data, index }) => {
+const PartStateBox = ({ data, index, toggle }) => {
+  // console.log(data);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -12,6 +13,7 @@ const PartStateBox = ({ data, index }) => {
   };
 
   return (
+    <>
     <div
       style={{
         width: "100%",
@@ -387,7 +389,16 @@ const PartStateBox = ({ data, index }) => {
       {/* Status Section */}
       <div
         style={{
-          backgroundColor: "var(--green-color)",
+          backgroundColor:
+            !data?.data?.percentage
+              ? "var(--green-color)"
+              : data?.data?.percentage > 66
+              ? "var(--green-color)"
+              : data?.data?.percentage >= 34 && data?.data?.percentage <= 66
+              ? "var(--orange-color)"
+              : data?.data?.percentage <= 33
+              ? "var(--red-color)"
+              : "var(--green-color)",
           fontSize: "14px",
           height: "35px",
           fontWeight: "500",
@@ -464,6 +475,7 @@ const PartStateBox = ({ data, index }) => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

@@ -13,7 +13,7 @@ const Home = ({ data, AllFormsData }) => {
       <br />
       <div className="container">
         <div className="row">
-          <div className="col-12 d-flex justify-content-center">
+          <div className="col-12 d-flex  justify-content-center">
             <CarDetails data={data} />
           </div>
 
@@ -227,7 +227,7 @@ const Home = ({ data, AllFormsData }) => {
             </div>
           </div>
 
-          <div className="col-12 d-flex justify-content-center ">
+          <div className="col-12 d-flex flex-column align-items-center   justify-content-center ">
             <Detail AllFormsData={AllFormsData} />
           </div>
 
