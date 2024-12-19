@@ -234,30 +234,29 @@ const vehicleInspectionReport2 = ({ AllFormsData, data }) => {
               Vehicle Inspection Report
             </h2>
             <div className="row">
-
-            {dummyData.map((item, index) => (
-              <div className="col-lg-3  mb-md-4 mt-md-3 my-1">
+              {dummyData.map((item, index) => (
+                <div className="col-lg-3  mb-md-4 mt-md-3 my-1">
                   <h6 className="progress-bar-label mb-2">{item.label}</h6>
-                <div className="progress mb-3 " key={index}>
-                <div
-                  className="progress-bar"
-                  style={{
-                    backgroundColor: "var(--primary-color)",
-                    width: `${item.value}%`,
-                    color: "var(--black-color)",
-                    fontWeight: "bold",
-                    fontSize: "14px",
-                  }}
-                  role="progressbar"
-                  aria-valuenow={item.value}
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  >
-                    {item.value}%
+                  <div className="progress mb-3 " key={index}>
+                    <div
+                      className="progress-bar"
+                      style={{
+                        backgroundColor: "var(--primary-color)",
+                        width: `${item.value}%`,
+                        color: "var(--black-color)",
+                        fontWeight: "bold",
+                        fontSize: "18px",
+                      }}
+                      role="progressbar"
+                      aria-valuenow={item.value}
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      {item.value}%
+                    </div>
                   </div>
-              </div>
-              </div>
-            ))}
+                </div>
+              ))}
             </div>
           </div>
         </div>
