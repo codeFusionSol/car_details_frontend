@@ -4,6 +4,7 @@ import Detail from "../../Components/Detail/Detail";
 import ExteriorCondition from "../../Components/ExteriorCondition/ExteriorCondition.jsx";
 import Navbar from "../../Components/Navbar/Navbar.jsx";
 import VehicleInspectionReport from "../../Components/vehicleInspectionReport/vehicleInspectionReport.jsx";
+import VehicleInspectionReport2 from "../../Components/vehicleInspectionReport2/vehicleInspectionReport2.jsx";
 
 const Home = ({ data, AllFormsData }) => {
   const isMobile = window.innerWidth <= 768;
@@ -13,12 +14,18 @@ const Home = ({ data, AllFormsData }) => {
       <Navbar />
       <div className="container">
         <div className="row">
-          <div className="col-12 d-flex  justify-content-center">
-            <CarDetails data={data} />
-          </div>
-
           <div className="col-12 d-flex justify-content-center VehicleInspectionReportContainer">
             <VehicleInspectionReport AllFormsData={AllFormsData} data={data} />
+          </div>
+
+       
+
+          <div className="col-12 d-flex mb-4 justify-content-center VehicleInspectionReportContainer">
+            <VehicleInspectionReport2 AllFormsData={AllFormsData} data={data} />
+          </div>
+
+          <div className="col-12 d-flex mb-4 justify-content-center">
+            <CarDetails data={data} />
           </div>
 
           <div

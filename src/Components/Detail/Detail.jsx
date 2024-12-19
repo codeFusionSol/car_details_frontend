@@ -9,6 +9,19 @@ const Detail = ({ AllFormsData }) => {
   const [activeSections, setActiveSections] = useState([...AllFormsData]);
   const isMobile = window.innerWidth <= 768;
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null); // State for selected image
+
+  const openModal = (imageData) => {
+    setSelectedImage(imageData); // Set clicked image data
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null); // Clear selected image
+  };
+
   useEffect(() => {
     setActiveSections([...AllFormsData]);
   }, [AllFormsData]);
@@ -60,7 +73,7 @@ const Detail = ({ AllFormsData }) => {
                 pictures?.data?.pictures[index]?.url ||
                 "/assets/icons/plusIcon.png"
               }
-              alt="image"
+              alt="Preview"
               style={{
                 objectFit: "cover",
                 borderRadius: "10px",
@@ -69,6 +82,7 @@ const Detail = ({ AllFormsData }) => {
               }}
               width="100%"
               height="100%"
+              onClick={() => openModal(pictures?.data?.pictures[index]?.url)} // Open modal with image
             />
           </div>
         </div>
@@ -80,11 +94,10 @@ const Detail = ({ AllFormsData }) => {
     <>
       <div
         style={{
-          padding: "20px",
           display: "flex",
           alignItems: "center",
           gap: "10px",
-          padding: 0,
+          padding: "0px",
         }}
       >
         <style>
@@ -211,7 +224,7 @@ const Detail = ({ AllFormsData }) => {
                           AllFormsData[index]?.data?.imageValueChecks?.map(
                             (item, idx) => {
                               if (toggle) {
-                                console.log(item)
+                                console.log(item);
                                 if (AllFormsData[index].name === "Tyres") {
                                   return null;
                                 }
@@ -247,7 +260,7 @@ const Detail = ({ AllFormsData }) => {
                               return sectionData?.imageValueChecks?.map(
                                 (item, idx) => {
                                   if (toggle) {
-                                console.log(item)
+                                    console.log(item);
 
                                     if (AllFormsData[index].name === "Tyres") {
                                       return null;
@@ -298,6 +311,54 @@ const Detail = ({ AllFormsData }) => {
         </h5>
         {renderImagePlaceholders()}
       </div>
+
+      {isModalOpen && selectedImage && (
+        <div
+          style={{
+            display: "flex",
+            position: "fixed",
+            zIndex: 1,
+            left: 0,
+            top: 0,
+            bottom: 0,
+            right: 0,
+            width: "100%",
+            height: "100%",
+            overflow: "auto",
+            backgroundColor: "rgba(0, 0, 0, 0.9)",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <span
+            style={{
+              position: "fixed",
+              top: "15px",
+              right: "35px",
+              color: "#f1f1f1",
+              fontSize: "40px",
+              fontWeight: "bold",
+              cursor: "pointer",
+            }}
+            onClick={closeModal}
+          >
+            &times;
+          </span>
+
+          <img
+            src={selectedImage} // Display selected image
+            alt="Selected"
+            style={{
+              maxWidth: "95%",
+              maxHeight: "95vh",
+              width: "100%",
+              objectFit: "contain",
+              animationName: "zoom",
+              animationDuration: "0.6s",
+            }}
+          />
+        </div>
+      )}
     </>
   );
 };

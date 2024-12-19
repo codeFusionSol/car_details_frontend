@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import "./vehicleInspectionReport.css";
+import "./vehicleInspectionReport2.css";
 import { useState } from "react";
 
-const vehicleInspectionReport = ({ AllFormsData, data }) => {
+const vehicleInspectionReport2 = ({ AllFormsData, data }) => {
   const [bodyFramePercentage, setBodyFramePercentage] = useState(0);
   const [
     engineTransmissionClutchPercentage,
@@ -227,128 +227,38 @@ const vehicleInspectionReport = ({ AllFormsData, data }) => {
 
   return (
     <>
-      <div className="container-fluid m-0 p-0">
-        <div className="row m-0 p-0">
-          <div
-            className="col-md-6 m-0 p-0 d-flex "
-            style={{
-              maxHeight: "484px",
-              borderRadius: "10px",
-              overflow: "hidden",
-              border: "7px solid rgb(235, 231, 231",
-            }}
-          >
-            <img
-              src={image}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              alt=""
-            />
-          </div>
-          <div className="col-md-6 d-flex flex-column justify-content-center align-items-center reportContainer px-0">
-            <div
-              className="overall-rating"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "center",
-              }}
-            >
-              <svg
-                viewBox="0 0 36 36"
-                className="circular-chart overAllRating orange my-0"
-              >
-                <path
-                  className="circle-bg"
-                  d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-                <path
-                  className="circle"
-                  strokeDasharray={`${overallPercentage}, 100`}
-                  d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-                <text
-                  x="18"
-                  y="20.35"
-                  className="percentage"
-                  style={{
-                    fontSize: "8px",
-                    fontWeight: "500",
-                    textAnchor: "middle",
-                    dominantBaseline: "middle",
-                  }}
-                >
-                  10 /{" "}
-                  {(overallPercentage / 10).toFixed(1) === "9.0"
-                    ? "9"
-                    : (overallPercentage / 10).toFixed(1) === "8.0"
-                    ? "8"
-                    : (overallPercentage / 10).toFixed(1) === "7.0"
-                    ? "7"
-                    : (overallPercentage / 10).toFixed(1) === "6.0"
-                    ? "6"
-                    : (overallPercentage / 10).toFixed(1) === "5.0"
-                    ? "5"
-                    : (overallPercentage / 10).toFixed(1) === "4.0"
-                    ? "4"
-                    : (overallPercentage / 10).toFixed(1) === "3.0"
-                    ? "3"
-                    : (overallPercentage / 10).toFixed(1) === "2.0"
-                    ? "2"
-                    : (overallPercentage / 10).toFixed(1) === "1.0"
-                    ? "1"
-                    : (overallPercentage / 10).toFixed(1) === "0.0"
-                    ? "0"
-                    : (overallPercentage / 10).toFixed(1)}
-                </text>
-              </svg>
-              <span
-                style={{
-                  fontSize: "24px",
-                  fontWeight: "500",
-                }}
-              >
-                OverAll RATING
-              </span>
-            </div>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-12">
+            <h2 className="vehicle-inspection-report-title mb-3">
+              Vehicle Inspection Report
+            </h2>
+            <div className="row">
 
-            {/* <div className="flex-wrapper">
-              {dummyData.map((item, index) => (
-                <div className="single-chart" key={index}>
-                  <svg viewBox="0 0 36 36" className="circular-chart orange">
-                    <path
-                      className="circle-bg"
-                      d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <path
-                      className="circle"
-                      strokeDasharray={`${item.value}, 100`}
-                      d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <text x="18" y="20.35" className="percentage">
-                      {item.value}%
-                    </text>
-                  </svg>
-                  <span
-                    style={{
-                      fontSize: window.innerWidth <= 768 ? "11px" : "12px",
-                      textAlign: "center",
-                    }}
+            {dummyData.map((item, index) => (
+              <div className="col-lg-3  mb-md-4 mt-md-3 my-1">
+                  <h6 className="progress-bar-label mb-2">{item.label}</h6>
+                <div className="progress mb-3 " key={index}>
+                <div
+                  className="progress-bar"
+                  style={{
+                    backgroundColor: "var(--primary-color)",
+                    width: `${item.value}%`,
+                    color: "var(--black-color)",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                  }}
+                  role="progressbar"
+                  aria-valuenow={item.value}
+                  aria-valuemin="0"
+                  aria-valuemax="100"
                   >
-                    {item.label}
-                  </span>
-                </div>
-              ))}
-            </div> */}
+                    {item.value}%
+                  </div>
+              </div>
+              </div>
+            ))}
+            </div>
           </div>
         </div>
       </div>
@@ -356,4 +266,4 @@ const vehicleInspectionReport = ({ AllFormsData, data }) => {
   );
 };
 
-export default vehicleInspectionReport;
+export default vehicleInspectionReport2;

@@ -6,10 +6,10 @@ const CarDetails = ({ data }) => {
   return (
     <>
       <div className="car-card container-lg">
-        <div className="car-image p-sm-4">
+        <div className="car-image p-sm-4 d-md-flex flex-column align-items-center d-none">
           <img
             src={carDetails?.image?.url}
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", width: "100%", height: "100%" }}
             alt="Toyota Aqua 2014"
           />
           <h2 className="car-title mt-2 text-center">{carDetails?.name}</h2>
@@ -71,9 +71,7 @@ const CarDetails = ({ data }) => {
               </td>
             </tr>
             <tr>
-              <td className=" ">
-                {" "}
-              </td>
+              <td className=" "> </td>
               <td className="borderRight ">
                 {" "}
                 {/* Engine <span>Value</span> */}
@@ -81,13 +79,9 @@ const CarDetails = ({ data }) => {
               <td className="borderRight ">
                 {" "}
                 Colour <span> {carDetails?.colour || "N/A"}</span>
-
                 {/* Engine <span>Value</span> */}
               </td>
-              <td className=" ">
-                {" "}
-                {/* Engine <span>Value</span> */}
-              </td>
+              <td className=" "> {/* Engine <span>Value</span> */}</td>
               <td className=""> {/* Engine <span>Value</span> */}</td>
             </tr>
           </table>
