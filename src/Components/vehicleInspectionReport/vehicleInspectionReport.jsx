@@ -245,78 +245,92 @@ const vehicleInspectionReport = ({ AllFormsData, data }) => {
             <div className="overall-rating">
               <svg
                 viewBox="0 0 36 36"
-                className="circular-chart overAllRating orange my-0"
+                className={`circular-chart overAllRating my-0 ${
+                  overallPercentage >= 80
+                    ? "green"
+                    : overallPercentage >= 50
+                    ? "orange"
+                    : "red"
+                }`}
               >
                 <path
                   className="circle-bg"
                   d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
+         a 15.9155 15.9155 0 0 0 0 31.831
+         a 15.9155 15.9155 0 0 0 0 -31.831"
                 />
                 <path
                   className="circle"
                   strokeDasharray={`${overallPercentage}, 100`}
+                  strokeDashoffset="25" // This offsets the stroke for anti-clockwise direction
                   d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
+         a 15.9155 15.9155 0 0 0 0 31.831
+         a 15.9155 15.9155 0 0 0 0 -31.831"
                 />
                 <text
                   x="18"
-                  y="20.35"
+                  y="16"
                   className="percentage"
                   style={{
                     fontSize: "8px",
                     fontWeight: "500",
+                    textAnchor: "middle",
                   }}
                 >
                   {overallPercentage}%
                 </text>
-              </svg>
-              <span
-                style={{
-                  fontSize:"14px" ,
-                  textAlign: "center",
-                  fontWeight: "500",
-                }}
-              >
-                OverAll Percentage
-              </span>
-            </div>
-
-          <div className="flex-wrapper">
-            {dummyData.map((item, index) => (
-              <div className="single-chart" key={index}>
-                <svg viewBox="0 0 36 36" className="circular-chart orange">
-                  <path
-                    className="circle-bg"
-                    d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-                  />
-                  <path
-                    className="circle"
-                    strokeDasharray={`${item.value}, 100`}
-                    d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-                  />
-                  <text x="18" y="20.35" className="percentage">
-                    {item.value}%
-                  </text>
-                </svg>
-                <span
+                <text
+                  x="18"
+                  y="24"
                   style={{
-                    fontSize: window.innerWidth <= 768 ? "11px" : "12px",
-                    textAlign: "center",
+                    fontSize: "2.5px",
+                    fontWeight: "500",
+                    textAnchor: "middle",
                   }}
                 >
-                  {item.label}
-                </span>
-              </div>
-            ))}
+                  OverAll Percentage
+                </text>
+              </svg>
+            </div>
+          </div>
+          <div className="col-12">
+            <div className="flex-wrapper">
+              {dummyData.map((item, index) => (
+                <div className="single-chart" key={index}>
+                  <svg viewBox="0 0 36 36" className="circular-chart orange">
+                    <path
+                      className="circle-bg"
+                      d="M18 2.0845
+     a 15.9155 15.9155 0 0 0 0 31.831
+     a 15.9155 15.9155 0 0 0 0 -31.831"
+                    />
+                    <path
+                      className="circle"
+                      strokeDasharray={`${overallPercentage}, 100`}
+                      strokeDashoffset="25" // This offsets the stroke for anti-clockwise direction
+                      d="M18 2.0845
+     a 15.9155 15.9155 0 0 0 0 31.831
+     a 15.9155 15.9155 0 0 0 0 -31.831"
+                    />
+
+                    <text x="18" y="20.35" className="percentage">
+                      {item.value}%
+                    </text>
+                  </svg>
+                  <span
+                    style={{
+                      fontSize: window.innerWidth <= 768 ? "11px" : "18px",
+                      fontWeight: "500",
+                      textAlign: "center",
+                    }}
+                  >
+                    {item.label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </>
   );

@@ -18,13 +18,13 @@
 .circular-chart {
   display: block;
   margin: 10px auto;
-  width: 84px;
-  height: 84px;
+  width: 150px;
+  height: 150px;
 }
 
 .overAllRating {
-  width: 100px !important;
-  height: 100px !important;
+  width: 250px !important;
+  height: 250px !important;
 }
 
 .circle-bg {
@@ -102,4 +102,17 @@
 
 .reportContainer {
   max-height: 484px;
+}
+
+
+.circular-chart.green .circle {
+  stroke: #4cc790; /* Green for percentages >= 80 */
+}
+
+.circular-chart.orange .circle {
+  stroke: var(--primary-color); /* Orange for percentages >= 50 and < 80 */
+}
+
+.circular-chart.red .circle {
+  stroke: red; /* Red for percentages < 50 */
 }

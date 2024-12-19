@@ -133,7 +133,7 @@ const Detail = ({ AllFormsData }) => {
             }
 
             input:checked + .slider:before {
-              transform: translateX(26px);
+              transform: translateX(16px);
             }
 
             .slider.round {
@@ -168,11 +168,11 @@ const Detail = ({ AllFormsData }) => {
       >
         {/* Accordion Section */}
         <div className="px-0 py-1">
-          <div className="accordion" id="inspectionAccordion">
+          <div className="accordion " id="inspectionAccordion">
             {AllFormsData?.map((section, index) => {
               if (index < 9) {
                 return (
-                  <div className="accordion-item " key={index}>
+                  <div className="accordion-item py-2 " key={index}>
                     <button
                       onClick={() => handleClick(section, index)}
                       className="accordion-button collapsed py-2"

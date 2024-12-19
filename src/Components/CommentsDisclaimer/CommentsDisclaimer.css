@@ -1,5 +1,26 @@
+.feedback-section {
+  font-size: 1rem;  
+  background-color: var(--white-color);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.feedback-section h5 {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.feedback-section p {
+  color: var(--black-color);
+  font-size: 1rem;
+}
+
 @media (max-width: 768px) {
-    .feedback-section {
-        text-align: center;
-    }
+  .feedback-section {
+    text-align: center;
+  }
+  .feedback-section p {
+    text-align: center;
+    font-size: 14px !important;
+  }
 }
