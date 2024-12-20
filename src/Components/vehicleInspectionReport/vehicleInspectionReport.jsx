@@ -253,6 +253,23 @@ const vehicleInspectionReport = ({ AllFormsData, data }) => {
                     : "red"
                 }`}
               >
+                <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#ffb88c"/>
+          <stop offset="100%" stopColor="#ff8c42"/>
+        </linearGradient>
+        <filter id="shadow">
+          <feDropShadow dx="0.5" dy="0.5" stdDeviation="0.5" floodColor="#000" floodOpacity="0.3"/>
+        </filter>
+        <filter id="innerShadow">
+          <feOffset dx="0" dy="1"/>
+          <feGaussianBlur stdDeviation="1"/>
+          <feComposite operator="out" in="SourceGraphic"/>
+          <feComponentTransfer>
+            <feFuncA type="linear" slope="0.7"/>
+          </feComponentTransfer>
+        </filter>
+      </defs>
                 <path
                   className="circle-bg"
                   d="M18 2.0845
@@ -282,6 +299,7 @@ const vehicleInspectionReport = ({ AllFormsData, data }) => {
                 <text
                   x="18"
                   y="24"
+                  className="percentage"
                   style={{
                     fontSize: "2.5px",
                     fontWeight: "500",
@@ -292,10 +310,18 @@ const vehicleInspectionReport = ({ AllFormsData, data }) => {
                 </text>
               </svg>
             </div>
+
+
+
+
+     
+
+
+
           </div>
           <div className="col-12">
             <div className="flex-wrapper">
-              {dummyData.map((item, index) => (
+              {/* {dummyData.map((item, index) => (
                 <div className="single-chart" key={index}>
                   <svg viewBox="0 0 36 36" className="circular-chart orange">
                     <path
@@ -327,7 +353,58 @@ const vehicleInspectionReport = ({ AllFormsData, data }) => {
                     {item.label}
                   </span>
                 </div>
-              ))}
+              ))} */}
+
+{dummyData.map((item, index) => (
+  <div className="single-chart" key={index}>
+    <svg viewBox="0 0 36 36" className="circular-chart orange">
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#ffb88c"/>
+          <stop offset="100%" stopColor="#ff8c42"/>
+        </linearGradient>
+        <filter id="shadow">
+          <feDropShadow dx="0.5" dy="0.5" stdDeviation="0.5" floodColor="#000" floodOpacity="0.3"/>
+        </filter>
+        <filter id="innerShadow">
+          <feOffset dx="0" dy="1"/>
+          <feGaussianBlur stdDeviation="1"/>
+          <feComposite operator="out" in="SourceGraphic"/>
+          <feComponentTransfer>
+            <feFuncA type="linear" slope="0.7"/>
+          </feComponentTransfer>
+        </filter>
+      </defs>
+      
+      {/* Background circle with 3D effect */}
+      <circle cx="18" cy="18" r="15.9155" className="circle-bg-3d"/>
+      
+      {/* Main progress circle */}
+      <path
+        className="circle"
+        strokeDasharray={`${item.value}, 100`}
+        strokeDashoffset="25"
+        d="M18 2.0845 a 15.9155 15.9155 0 0 0 0 31.831 a 15.9155 15.9155 0 0 0 0 -31.831"
+        fill="none"
+        stroke="url(#gradient)"
+        filter="url(#shadow)"
+      />
+      
+      {/* Percentage text */}
+      <text 
+        x="18" 
+        y="20.35" 
+        className="percentage"
+        filter="url(#shadow)"
+      >
+        {item.value}%
+      </text>
+    </svg>
+    <span className="chart-label">
+      {item.label}
+    </span>
+  </div>
+))}
             </div>
           </div>
         </div>
