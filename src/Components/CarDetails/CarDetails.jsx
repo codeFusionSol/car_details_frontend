@@ -9,7 +9,12 @@ const CarDetails = ({ data }) => {
         <div className="car-image p-sm-4">
           <img
             src={carDetails?.image?.url}
-            style={{ objectFit: "cover" }}
+
+            style={{
+              objectFit: "cover",
+              maxHeight: "200px",
+              width: "100%",
+            }}
             alt="Toyota Aqua 2014"
           />
           <h2 className="car-title mt-2 text-center">{carDetails?.name}</h2>
