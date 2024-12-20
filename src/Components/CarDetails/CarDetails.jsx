@@ -124,7 +124,7 @@ const CarDetails = ({ data }) => {
             </p>
             <p className="carDetailsMobileItem">
               Registration No.{" "}
-              <span>{carDetails?.registrationNo || "N/A"}</span>
+              <span>{carDetails?.registrationNo?.toUpperCase() || "N/A"}</span>
             </p>
             <p className="carDetailsMobileItem">
               Colour <span>{carDetails?.colour || "N/A"}</span>

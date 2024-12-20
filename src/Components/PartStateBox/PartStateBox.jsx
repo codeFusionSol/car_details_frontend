@@ -419,7 +419,7 @@ const PartStateBox = ({ data, index, toggle }) => {
           }}
         >
           {index === 0
-            ? data?.data?.value === true
+            ? data?.data?.value == "true"
               ? "Accidented"
               : "Non-Accidented"
             : index === 1 ||
